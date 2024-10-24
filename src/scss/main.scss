@@ -1,0 +1,67 @@
+//Base
+@import 'base/_fonts';
+@import 'base/_variables';
+
+//Header
+@import 'header/_header';
+
+//Main
+@import 'main/_main';
+
+//Hero
+@import 'hero/_hero';
+
+//UI Elements
+@import 'ui-elements/_ui-elements';
+
+//Spaces
+@import 'spaces/_spaces';
+
+//Habitaciones
+@import 'habitaciones/_habitaciones';
+
+body {
+    font-family: $font-family;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    direction: ltr;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    overflow-x: hidden;
+}
+
+h2, h1, h3 {
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.02em;
+    text-transform: none;
+}
+
+p {
+    margin: 0;
+    letter-spacing: 0.01em;
+}
+
+main {
+    margin: 0 auto;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: $text-color;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}

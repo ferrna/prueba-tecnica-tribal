@@ -1,0 +1,509 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  z-index: 100;
+  border-bottom: 1px solid rgba(252, 252, 252, 0.4);
+  transition: color 0.3s ease;
+}
+
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3.5rem;
+  margin: 0 auto;
+  height: 100%;
+}
+#header-container svg {
+  stroke: #fcfcfc;
+}
+#header-container .header-svg-fill {
+  fill: #fcfcfc;
+}
+
+#header-left {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  flex: 1;
+}
+#header-left .menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#header-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#header-nav {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu-item-text {
+  font-weight: 600;
+  font-size: 11.5px;
+  line-height: 18px;
+}
+
+main {
+  min-height: 100vh;
+  position: relative;
+}
+
+#main-content-wrapper {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.full-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+#hero-box-wrapper {
+  width: 100%;
+  height: 100vh;
+  padding-top: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#hero-box-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../assets/background.png) no-repeat center 30%;
+  filter: brightness(0.7);
+  background-size: 100% auto;
+  z-index: -1;
+}
+
+#hero-box-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: max-content;
+  margin: 0 auto;
+}
+
+#hero-box-top {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  gap: 24px;
+}
+#hero-box-top div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 4rem;
+  height: 124px;
+  white-space: nowrap;
+}
+#hero-box-top div span {
+  display: block;
+  font-weight: 700;
+}
+#hero-box-top div span:nth-child(2) {
+  color: #EBE0A1;
+}
+#hero-box-top svg {
+  flex-shrink: 0;
+}
+
+#hero-box-bottom {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-top: 120px;
+}
+
+#descubre-como {
+  margin: 0 auto;
+  text-align: center;
+}
+#descubre-como div:nth-child(1) {
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+#desliza {
+  position: fixed;
+  top: 236px;
+  left: 40px;
+  z-index: 100;
+  transform-origin: top left;
+  transform: rotate(-90deg) translate(-100%, 0);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 23px;
+}
+#desliza span {
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: left;
+}
+#desliza .line-animation {
+  width: 58px;
+  height: 4px;
+  border-top: 2px solid rgba(160, 163, 189, 0.6);
+  animation: shrinkBorder 2.4s linear infinite;
+}
+
+.line-animation {
+  position: relative;
+  width: 40px;
+  height: 4px;
+  overflow: hidden;
+}
+.line-animation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -40px;
+  width: 40px;
+  height: 2px;
+  background-color: #EBE0A1;
+  animation: slideUnderline 2.4s linear infinite;
+}
+
+@keyframes shrinkBorder {
+  0% {
+    border-top: 1px solid rgba(160, 163, 189, 0.6);
+  }
+  40%, 60% {
+    border-top: 2px solid rgba(160, 163, 189, 0.6);
+  }
+  80%, 100% {
+    border-top: 2px solid rgba(160, 163, 189, 0.6);
+  }
+}
+@keyframes slideUnderline {
+  0% {
+    transform: translateX(0);
+  }
+  40%, 60% {
+    transform: translateX(-100px);
+  }
+  80%, 100% {
+    transform: translateX(-100px);
+  }
+}
+#corner-buttons {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 200;
+}
+#corner-buttons button {
+  background-color: #fcfcfc;
+  border-radius: 360px;
+  padding: 1rem;
+  border: 1px solid #E2E2E5;
+}
+
+#spaces-content {
+  width: 100%;
+  height: 100vh;
+  padding: 88px 40px 0 40px;
+  background-color: #266041;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+#spaces-container {
+  width: 100%;
+}
+
+#spaces-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  gap: 3.5rem;
+}
+#spaces-images img {
+  height: 30%;
+  width: auto;
+  object-fit: cover;
+  transition: height 0.3s ease;
+  border-radius: 12px;
+}
+#spaces-images img:nth-child(1), #spaces-images img:nth-child(7) {
+  height: 25%;
+  width: 72px;
+}
+#spaces-images img:nth-child(2), #spaces-images img:nth-child(6) {
+  height: 30%;
+  width: 90px;
+}
+#spaces-images img:nth-child(3), #spaces-images img:nth-child(5) {
+  height: 80%;
+  width: 180px;
+}
+#spaces-images img:nth-child(4) {
+  height: 100%;
+  width: 274px;
+}
+#spaces-images img:hover {
+  object-fit: contain;
+  width: auto;
+}
+
+#habitaciones-left {
+  width: 100%;
+  padding: 64px 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#habitaciones-left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/habitaciones/sala-comedor-cocina.jpg) no-repeat center center/cover;
+  filter: brightness(0.7);
+}
+#habitaciones-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+#habitaciones-left .habitaciones-left-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 24px;
+  color: #FFFFFF;
+}
+#habitaciones-left .habitaciones-left-box .title div {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: #EBE0A1;
+  margin-bottom: 0.5rem;
+}
+#habitaciones-left .habitaciones-left-box .title h3 {
+  text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 700;
+}
+#habitaciones-left .habitaciones-left-box .description p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: left;
+}
+#habitaciones-left .habitaciones-left-box .buttons button:nth-child(1) {
+  background-color: #266041;
+  margin-right: 1.5rem;
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #EBE0A1;
+  text-align: center;
+}
+#habitaciones-left .habitaciones-left-box .buttons button:nth-child(2) {
+  background-color: transparent;
+  padding: 16px 24px;
+  font-size: 11.5px;
+  line-height: 18px;
+  border-radius: 100px;
+  color: #fcfcfc;
+  text-align: center;
+  border: 2px solid #fcfcfc;
+}
+
+#habitaciones-right {
+  display: flex;
+  width: 100%;
+}
+#habitaciones-right .habitaciones-right-item:nth-child(1) {
+  flex: 1;
+  position: relative;
+}
+#habitaciones-right .habitaciones-right-item:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/habitaciones/sala-comedor-cocina2.jpg) no-repeat center center/cover;
+  filter: brightness(0.7);
+}
+#habitaciones-right .habitaciones-right-item:nth-child(2) {
+  flex: 1;
+  position: relative;
+}
+#habitaciones-right .habitaciones-right-item:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/habitaciones/sala-comedor-cocina3.jpg) no-repeat center center/cover;
+  filter: brightness(0.7);
+}
+#habitaciones-right .habitaciones-right-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#habitaciones-right .habitaciones-right-item .habitaciones-right-item-box {
+  width: max-content;
+  text-align: center;
+}
+#habitaciones-right .habitaciones-right-item .habitaciones-right-item-box button {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid #CCDBE0;
+  padding: 16px;
+  backdrop-filter: blur(30px);
+}
+#habitaciones-right .habitaciones-right-item .habitaciones-right-item-box .title {
+  margin-top: 24px;
+  letter-spacing: 0.05em;
+}
+#habitaciones-right .habitaciones-right-item .habitaciones-right-item-box .title div {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #EBE0A1;
+  margin-bottom: 0.5rem;
+}
+#habitaciones-right .habitaciones-right-item .habitaciones-right-item-box .title h3 {
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+#habitaciones-content {
+  width: 100%;
+  min-height: 100vh;
+}
+
+#habitaciones-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+#habitaciones-container #habitaciones-left,
+#habitaciones-container #habitaciones-right {
+  flex: 0 0 50%;
+  width: 50%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fcfcfc;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  direction: ltr;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  overflow-x: hidden;
+}
+
+h2, h1, h3 {
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+p {
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+main {
+  margin: 0 auto;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: #fcfcfc;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */

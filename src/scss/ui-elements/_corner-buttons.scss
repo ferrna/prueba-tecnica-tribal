@@ -1,0 +1,15 @@
+#corner-buttons {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 200;
+    button {
+        background-color: $text-color;
+        border-radius: 360px;
+        padding: 1rem;
+        border: 1px solid $gray-medium;
+    }
+}

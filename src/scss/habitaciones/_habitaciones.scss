@@ -1,0 +1,18 @@
+@import '_habitaciones-left';
+@import '_habitaciones-right';
+
+#habitaciones-content {
+    width: 100%;
+    min-height: 100vh;
+}
+#habitaciones-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+    #habitaciones-left,
+    #habitaciones-right {
+        flex: 0 0 50%;
+        width: 50%;
+    }
+}
